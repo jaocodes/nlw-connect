@@ -9,7 +9,7 @@ import {
   validatorCompiler,
 } from 'fastify-type-provider-zod'
 import { env } from './env'
-import { subscribeToEvent } from './routes/subscribe-to-event'
+import { subscribeToEventRoute } from './routes/subscribe-to-event'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -32,7 +32,7 @@ app.register(fastifySwagger, {
 
 app.register(fastifySwaggerUi, { routePrefix: '/docs' })
 
-app.register(subscribeToEvent)
+app.register(subscribeToEventRoute)
 
 app
   .listen({
