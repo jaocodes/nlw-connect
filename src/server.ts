@@ -10,6 +10,7 @@ import {
 } from 'fastify-type-provider-zod'
 import { env } from './env'
 import { acessInviteLinkRoute } from './routes/acess-invite-link'
+import { getRankingRoute } from './routes/get-ranking'
 import { getSubscriberInviteClicksRoute } from './routes/get-subscriber-invite-clicks'
 import { getSubscriberInvitesCountRoute } from './routes/get-subscriber-invites-count'
 import { getSubscriberRankingPositionRoute } from './routes/get-subscriber-rank-position'
@@ -42,6 +43,7 @@ app.register(getSubscriberInviteClicksRoute)
 app.register(getSubscriberInvitesCountRoute)
 app.register(getSubscriberRankingPositionRoute)
 
+app.register(getRankingRoute)
 app
   .listen({
     port: env.PORT,
